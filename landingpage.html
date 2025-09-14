@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Guidance Landing Page</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 40px;
+      background: transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav h2 {
+      color: #0077b6;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #fff;
+      background: #0077b6;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, #0077b6, #0096c7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero a {
+      display: inline-block;
+      background: #fff;
+      color: #0077b6;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .hero a:hover {
+      background: #023e8a;
+      color: #fff;
+    }
+
+    /* Sections */
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease-out;
+      background: #fff;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section:nth-of-type(even) {
+      background: #f1f5f9;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #023e8a;
+    }
+
+    section p {
+      max-width: 700px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Forms */
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background: #0077b6;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-container button:hover {
+      background: #023e8a;
+    }
+
+    footer {
+      background: #023e8a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <h2>CareerGuide</h2>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#path">Career Path</a></li>
+      <li><a href="#guidance">Guidance</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#signup">Signup</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero" id="home">
+    <div>
+      <h1>Discover Your Career Path</h1>
+      <p>Find guidance based on your interests and skills.</p>
+      <a href="#path">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Career Path -->
+  <section id="path">
+    <h2>Career Path</h2>
+    <p>We help students explore opportunities in technology, arts, business, and more — tailored to their interests.</p>
+  </section>
+
+  <!-- Guidance -->
+  <section id="guidance">
+    <h2>Guidance</h2>
+    <p>Personalized mentoring, resources, and structured roadmaps to help you achieve your career goals.</p>
+  </section>
+
+  <!-- Login -->
+  <section id="login">
+    <h2>Login</h2>
+    <div class="form-container">
+      <input type="email" placeholder="Enter Email">
+      <input type="password" placeholder="Enter Password">
+      <button>Login</button>
+    </div>
+  </section>
+
+  <!-- Signup -->
+  <section id="signup">
+    <h2>Signup</h2>
+    <div class="form-container">
+      <input type="text" placeholder="Enter Name">
+      <input type="email" placeholder="Enter Email">
+      <input type="password" placeholder="Create Password">
+      <button>Signup</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CareerGuide. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll("nav ul li a");
+    const sections = document.querySelectorAll("section, .hero");
+
+    // Change nav bg on scroll
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+
+      // Highlight active menu
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // Fade-in animation for sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
